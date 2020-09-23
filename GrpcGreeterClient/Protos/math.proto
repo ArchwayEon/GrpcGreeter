@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeter";
+
+package greet;
+
+// The greeting service definition.
+service CustomMath {
+  rpc Add (AddRequest) returns (AddReply);
+  rpc Sine (SineRequest) returns (SineReply); 
+}
+
+// The request message containing the user's name.
+message AddRequest {
+  double value1 = 1;
+  double value2 = 2;
+}
+
+// The response message containing the greetings.
+message AddReply {
+  double sum = 1;
+}
+
+message SineRequest {
+	double value = 1;
+}
+
+message SineReply {
+	double value = 1;
+}
