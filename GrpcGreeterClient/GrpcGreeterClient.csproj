@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Protos\CustomMath.proto" />
     <None Remove="Protos\greet.proto" />
   </ItemGroup>
 
@@ -18,12 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
-  </ItemGroup>
-
    <ItemGroup>
       <Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
+		 <Protobuf Include="Protos\CustomMath.proto" GrpcServices="Client" />
    </ItemGroup>
 
 </Project>
