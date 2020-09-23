@@ -22,5 +22,19 @@ namespace GrpcGreeter
             Message = "Hello " + request.Name
          });
       }
-   }
+
+        public override Task<GreetReply> GetGreeting(GreetRequest request, ServerCallContext context)
+        {
+            var greetings = new Dictionary<int, string>(){
+                {1, "Hi "},
+                {2, "Howdy "},
+                {3, "Bye "}
+            };
+
+            return Task.FromResult(new GreetReply
+            {
+                Message = greetings[request.Type] + request.Name
+            }); ; ;
+        }
+    }
 }

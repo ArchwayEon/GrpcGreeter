@@ -14,7 +14,21 @@ namespace GrpcGreeterClient
          var reply = await client.SayHelloAsync(
             new HelloRequest { Name = "GreeterClient" });
          Console.WriteLine($"Greeting: {reply.Message}");
-         Console.WriteLine("Press any key to exit...");
+
+        var greetReply1 = await client.GetGreetingAsync(
+        new GreetRequest { Type = 1, Name = "Koi" });
+            Console.WriteLine($"Greeting: {greetReply1.Message}");
+
+            var greetReply2 = await client.GetGreetingAsync(
+        new GreetRequest { Type = 2, Name = "Jeff" });
+            Console.WriteLine($"Greeting: {greetReply2.Message}");
+
+            var greetReply3 = await client.GetGreetingAsync(
+        new GreetRequest { Type = 3, Name = "Emma" });
+            Console.WriteLine($"Greeting: {greetReply3.Message}");
+
+
+            Console.WriteLine("Press any key to exit...");
          Console.ReadKey();
       }
    }
