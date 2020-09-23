@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeter";
+
+package greet;
+
+service CustomMath {
+  rpc Add (AddRequest) returns (AddReply);
+  rpc Sine (SineRequest) returns (SineReply);
+}
+
+message AddRequest {
+  float num1 = 1;
+  float num2 = 2;
+}
+
+message AddReply {
+  double result = 1;
+}
+
+message SineRequest {
+	double num1 = 1;
+}
+
+message SineReply {
+	double result = 1;
+}
